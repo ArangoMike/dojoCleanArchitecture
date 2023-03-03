@@ -1,11 +1,15 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation project( ':async-event-handler')
+	implementation project( ':async-event-bus')
+	implementation project( ':serializer')
 	implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
 	implementation project( ':mongo-repository')
 	implementation project( ':reactive-web')
     implementation project(':model')
     implementation project(':usecase')
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '3.0.3'
     implementation 'org.springframework.boot:spring-boot-starter'
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
 }
